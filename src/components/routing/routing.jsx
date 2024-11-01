@@ -3,24 +3,19 @@ import App from '../../App';
 import { useEffect, useState } from 'react';
 import Loader from '../loader/loader';
 import Home from '../home/home';
+import Login from '../login/loginpage';
 
 
 function Routing(){
-    let [loader,setloader] = useState(true)
-
-    useEffect(()=>{
-        setTimeout(()=>{
-            setloader(false)
-            console.log("called")
-        },4000)
-    },[])
+    
 
 
     return (
         <div>
-            {loader &&  <Loader />}
+            
             <Routes>
                 <Route path='/' element={<Home />} />
+                <Route path='/login' element={<Login/>}/>
             </Routes>
         </div>
     )
